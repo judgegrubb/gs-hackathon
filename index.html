@@ -14,14 +14,15 @@
 	  		<h1>UTAH OZONE HEATMAP</h1>
 		</header>
 	  	<main>
-	  		<button class="btn btn-default" onclick="iterate()">PLAY</button>
+	  		
 		    <div id="map"></div>
 		    <script src="data.js"></script>
 		    <script src="script.js"></script>
 		    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4kODOBdLGSAEXbMM85Ye17ZqxdhC3dcs&libraries=visualization&callback=initMap" async defer></script>
 
-		    <input type="range" name="year" min="2003" max="2013" oninput="updateData(this.value)" onchange="updateData(this.value)" />
-		    <p>'03   '04   '05   '06   '07   '08   '09   '10   '11   '12   '13</p>
+		    <input id="rangeId" type="range" name="year" min="2003" max="2013" oninput="updateData(this.value)" onchange="updateData(this.value)" />
+		    <p>'03   '04   <span id="greyout">'05</span>   '06   '07   '08   '09   '10   '11   '12   '13</p>
+			<button class="btn btn-primary" onclick="clickPlay()">PLAY</button>
 		</main>
 		<footer>
 		</footer>
